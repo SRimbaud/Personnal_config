@@ -1,0 +1,11 @@
+#Python
+
+*.pwc
+*.pyc
+
+#vim
+
+*.swp
+*.swp
+*.swo
+
