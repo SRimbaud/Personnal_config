@@ -17,7 +17,8 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 "...
 
 
@@ -27,6 +28,17 @@ filetype plugin indent on
 xmap ga <Plug>(EasyAlign)
 "Let default coloscheme color for indentline (Bad with new railcast)
 "let g:indentLine_setColors = 0
+
+"--------- YCM ---------------
+
+"let g:ycm_python_binary_path = 'usr/bin/python2.7'
+"-- cpp enhanced highlight ---
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_no_function_highlight = 1
 
 "--------- syntastic----------
 "set statusline+=%#warningmsg#
@@ -39,10 +51,11 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 
-let g:syntastic_python_checkers = ['pylint', 'pep8', 'flake8',
-      \'pyflakes', 'python']
-"let g:syntastic_cpp_checkers = ['make', 'ninja', 'g++']
-"let g:syntastic_c_checkers = ['make', 'ninja', 'gcc']
+let g:syntastic_python_checkers = ['pylint', 'flake8', 'pyflakes']
+let g:syntastic_sh_checkers = ['sh', 'shellcheck']
+let g:syntastic_cmake_checkers = ['cmakelint']
+let g:syntastic_cpp_checkers = []
+let g:syntastic_c_checkers = []
 
 "----------- NerdTree ----------------
 map <F3> :NERDTreeToggle<CR>
@@ -70,6 +83,10 @@ if has("autocmd")
     autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
   augroup END
 endif
+"----------- Highlight search --------
+:set hlsearch " Search highlight
+" Highlight all occurence of the current word
+:nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 "----------- Other -------------------
 
 set number relativenumber
