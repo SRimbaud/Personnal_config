@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 Plugin 'gkjgh/cobalt'
 Plugin 'carakan/new-railscasts-theme'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-syntastic/syntastic'
@@ -108,10 +109,13 @@ set spellsuggest =5
 
 set cursorline
 
+if has('gui_running')
+  set guifont=Monospace\ Bold\ 10 
+endif
 set colorcolumn=81
-colorscheme new-railscasts
+set t_Co=256
+colorscheme jellybeans
 highlight ColorColumn ctermbg=DarkRed guibg=DarkRed
-" Juste pour json
 
 set tabstop =2
 set shiftwidth =2
