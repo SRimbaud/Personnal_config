@@ -10,9 +10,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " List plugin here
 "
-Bundle 'sonph/onehalf', {'rtp': 'vim/'}
-Plugin 'gkjgh/cobalt'
-Plugin 'carakan/new-railscasts-theme'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'junegunn/vim-easy-align'
@@ -20,6 +17,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-fugitive'
 "...
 
 
@@ -30,16 +29,18 @@ xmap ga <Plug>(EasyAlign)
 "Let default coloscheme color for indentline (Bad with new railcast)
 "let g:indentLine_setColors = 0
 
-"--------- YCM ---------------
-
-"let g:ycm_python_binary_path = 'usr/bin/python2.7'
-"-- cpp enhanced highlight ---
-
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_experimental_simple_template_highlight = 1
-let g:cpp_no_function_highlight = 1
+"--------- LightLine ---------------
+set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 "--------- syntastic----------
 "set statusline+=%#warningmsg#
@@ -59,7 +60,7 @@ let g:syntastic_cpp_checkers = []
 let g:syntastic_c_checkers = []
 
 "----------- NerdTree ----------------
-map <F3> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
 
 "Close vim if nerdtree is the only opened buff
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
@@ -88,6 +89,12 @@ endif
 :set hlsearch " Search highlight
 " Highlight all occurence of the current word
 :nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
+"----------- Buffer Switch -----------
+:nnoremap <C-h> :bprev <CR>
+:nnoremap <C-l> :bnext <CR>
+:nnoremap <F5> :sb 
+
+
 "----------- Other -------------------
 
 set number relativenumber
