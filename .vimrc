@@ -65,8 +65,6 @@ nnoremap <F3> :NERDTreeToggle<CR>
 "Close vim if nerdtree is the only opened buff
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
       \&& b:NERDTree.isTabTree()) | q | endif
-"----------- Status Line -------------
-let laststatus = 2
 
 "----------- Templates ---------------
 
@@ -89,11 +87,21 @@ endif
 :set hlsearch " Search highlight
 " Highlight all occurence of the current word
 :nnoremap <F8> :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-"----------- Buffer Switch -----------
+"----------- My remapping -------------
+
+"~~~~~~ Normal Mode ~~~~~
+"Buffer switch
 :nnoremap <C-h> :bprev <CR>
 :nnoremap <C-l> :bnext <CR>
 :nnoremap <F5> :sb 
 
+"Tab switch
+:nnoremap <C-k> :tabnext <CR>
+:nnoremap <C-j> :tabprev <CR>
+
+
+"~~~~~~ Inset Mode ~~~~~~
+:inoremap <C-S> <C-o>:w<CR>
 
 "----------- Other -------------------
 
