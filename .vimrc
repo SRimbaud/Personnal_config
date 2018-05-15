@@ -105,6 +105,10 @@ endif
 
 "----------- Other -------------------
 
+"~~~~~~~~ Autocmd ~~~~~~~~
+"autocmd BufWritePre *.cpp *.hpp *.c *.h *.py *.sh *.json *.js *.java *.cmake
+"      \CMakeLists.txt Makefile *.make *.tex *.htlm *.rb
+"      \%s/\s\+$//e
 set number relativenumber
 syn on
 set syntax =on
