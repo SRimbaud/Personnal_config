@@ -72,11 +72,11 @@ if has("autocmd")
   augroup templates
     au!
     "~~~~~~~~ C lang ~~~~~~~~
-    autocmd BufNewFile CMakeLists.txt, *.cmake 0r 
+    autocmd BufNewFile CMakeLists.txt,*.cmake 0r 
           \~/.vim/templates/skeleton.cmake
     autocmd BufNewFile main.cpp 0r ~/.vim/templates/skeleton.main.cpp
     autocmd BufNewFile main.c 0r ~/.vim/templates/skeleton.main.c
-    autocmd BufNewFile *.h, *.hpp ~/.vim/templates/skeleton.hxx
+    autocmd BufNewFile *.h,*.hpp 0r ~/.vim/templates/skeleton.hxx
     "~~~~~~~~ Python ~~~~~~~~~
     autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
     "~~~~~~~~ Bash ~~~~~~~~~~~
