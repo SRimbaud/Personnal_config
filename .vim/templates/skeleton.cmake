@@ -4,6 +4,8 @@ project (project_name)
 set (project_name_VERSION_MAJOR 1)
 set (project_name_VERSION_MINOR 0)
 
+set (CMAKE_CXX_STANDARD 11)
+
 set(project_target project_name)
  
 # add the binary tree to the search path for include files

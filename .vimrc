@@ -19,6 +19,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-bufferline'
+Plugin 'majutsushi/tagbar'
 "...
 
 
@@ -31,16 +33,31 @@ xmap ga <Plug>(EasyAlign)
 
 "--------- LightLine ---------------
 set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+let g:lightline = {}
+let g:lightline.colorscheme = 'jellybeans'
+let g:lightline.active = {
+    \ 'left': [ [ 'mode', 'paste' ],
+    \           [ 'gitbranch', 'readonly', 'Nfilename', 'modified' ],
+    \           [ 'tag' ] ],
+    \ 'right': [ [ 'lineinformation' ],
+    \            [ 'percent' ],
+    \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+
+let g:lightline.inactive = {
+    \ 'left': [ [ 'filename' ] ],
+    \ 'right': [ [ 'lineinfo' ],
+    \            [ 'percent' ] ] }
+
+let g:lightline.component = {
+    \ 'lineinformation': '%l[%L]:%c',
+    \ 'Nfilename': '%n: %t',
+    \ 'tag' : "%{tagbar#currenttag('<%s>', '<None>', 'f')}"
+    \}
+let g:lightline.component_function = {
+    \ 'gitbranch': 'fugitive#head',
+    \}
+
+set noshowmode
 
 "--------- syntastic----------
 "set statusline+=%#warningmsg#
@@ -59,8 +76,9 @@ let g:syntastic_cmake_checkers = ['cmakelint']
 let g:syntastic_cpp_checkers = []
 let g:syntastic_c_checkers = []
 
-"----------- NerdTree ----------------
+"----------- NerdTree + Tagbar ------
 nnoremap <F3> :NERDTreeToggle<CR>
+nnoremap <F4> :TagbarToggle<CR>
 
 "Close vim if nerdtree is the only opened buff
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
