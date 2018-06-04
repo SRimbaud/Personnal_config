@@ -21,6 +21,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/scons.vim'
 "...
 
 
@@ -99,6 +100,8 @@ if has("autocmd")
     autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
     "~~~~~~~~ Bash ~~~~~~~~~~~
     autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
+    "~~~~~~~~ Scons ~~~~~~~~~~~
+    au BufRead,BufNewFile SCons* set filetype=scons
   augroup END
 endif
 "----------- Highlight search --------
