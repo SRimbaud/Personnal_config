@@ -127,6 +127,7 @@ endif
 "autocmd BufWritePre *.cpp *.hpp *.c *.h *.py *.sh *.json *.js *.java *.cmake
 "      \CMakeLists.txt Makefile *.make *.tex *.htlm *.rb
 "      \%s/\s\+$//e
+let g:load_doxygen_syntax=1
 set number relativenumber
 syn on
 set syntax =on
