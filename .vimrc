@@ -10,7 +10,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " List plugin here
 "
-Plugin 'nanotech/jellybeans.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-syntastic/syntastic'
@@ -22,6 +21,11 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/scons.vim'
+
+"Colorscheme
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'NLKNguyen/papercolor-theme'
 "...
 
 
@@ -38,11 +42,11 @@ let g:lightline = {}
 let g:lightline.colorscheme = 'jellybeans'
 let g:lightline.active = {
     \ 'left': [ [ 'mode', 'paste' ],
-    \           [ 'gitbranch', 'readonly', 'Nfilename', 'modified' ],
+    \           [ 'gitbranch', 'readonly', 'filename', 'modified' ],
     \           [ 'tag' ] ],
     \ 'right': [ [ 'lineinformation' ],
-    \            [ 'percent' ],
-    \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
+    \            [ 'filetype' ],
+    \            [ 'fileencoding' ] ] }
 
 let g:lightline.inactive = {
     \ 'left': [ [ 'filename' ] ],
