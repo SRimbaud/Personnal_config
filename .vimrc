@@ -21,6 +21,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/scons.vim'
+Plugin 'fholgado/minibufexpl.vim'
 
 "Colorscheme
 Plugin 'nanotech/jellybeans.vim'
@@ -81,9 +82,16 @@ let g:syntastic_cmake_checkers = ['cmakelint']
 let g:syntastic_cpp_checkers = []
 let g:syntastic_c_checkers = []
 
-"----------- NerdTree + Tagbar ------
-nnoremap <F3> :NERDTreeToggle<CR>
-nnoremap <F4> :TagbarToggle<CR>
+"----------- NerdTree + Tagbar + MiniBufferExplorer ------
+function OWNStartMBE()
+  :MBEToggle
+  :MBEFocus
+endfunction
+let g:miniBufExplorerAutoStart = 0
+let g:miniBufExplCloseOnSelect = 1
+:nnoremap <F3> :NERDTreeToggle<CR>
+:nnoremap <F4> :TagbarToggle<CR>
+:nnoremap <F2> :exec OWNStartMBE()<CR>
 
 "Close vim if nerdtree is the only opened buff
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree")
