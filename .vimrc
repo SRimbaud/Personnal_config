@@ -132,6 +132,12 @@ endif
 :nnoremap <C-k> :tabnext <CR>
 :nnoremap <C-j> :tabprev <CR>
 
+"Window switch
+:nnoremap <C-Down>  <C-W>j
+:nnoremap <C-Up>    <C-W>k
+:nnoremap <C-Left>  <C-W>h
+:nnoremap <C-Right> <C-W>l
+
 
 "~~~~~~ Inset Mode ~~~~~~
 :inoremap <C-S> <C-o>:w<CR>
