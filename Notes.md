@@ -4,9 +4,9 @@
 
 ### Usefull trick
 
-$_ or !$ : Repeat last argument of the previous command
-!!:X : Repeat argument number X of the previous command (!!:0 command, !!:1 first arg ...)
-!! : Repeat last command (ex: sudo !!)
+* $_ or !$ : Repeat last argument of the previous command
+* !!:X : Repeat argument number X of the previous command (!!:0 command, !!:1 first arg ...)
+* !! : Repeat last command (ex: sudo !!)
 
 ### Shortcut
 *   ctrl + _ (undo)
