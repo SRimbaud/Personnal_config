@@ -114,6 +114,12 @@ if has("autocmd")
     autocmd BufNewFile *.sh 0r ~/.vim/templates/skeleton.sh
     "~~~~~~~~ Scons ~~~~~~~~~~~
     au BufRead,BufNewFile SCons* set filetype=scons
+    "~~~~~~~~ Java ~~~~~~~~~~~
+    autocmd BufNewFile *.java 0r ~/.vim/templates/skeleton.java
+    "~~~~~~~~ Html ~~~~~~~~~~~
+    autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
+    "~~~~~~~~ Awk ~~~~~~~~~~~
+    autocmd BufNewFile *.awk 0r ~/.vim/templates/skeleton.awk
   augroup END
 endif
 "----------- Highlight search --------
