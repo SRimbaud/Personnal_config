@@ -2,6 +2,7 @@
 
 ## Bash 
 
+
 ### Usefull trick
 
 * $_ or !$ : Repeat last argument of the previous command
@@ -28,4 +29,17 @@
 
 
 ### Commands
-bind -p : List all bash shortcuts
+* bind -p : List all bash shortcuts
+* rmdir : supprime répertoire vides
+* tee : Renvoie le stdin sur le stdout et dans un fichier
+* tr : REmplace un char par un autre.
+* sort : Tri un stream.
+* uniq : Elimine lignes dupliquées dans un stream.
+* wc : Comptes les mots/lignes/octets dans un stream.
+* df (-h) : Info sur espace libre et occupé par le sys de fichiers
+* du (-h) : Espace disque utilisé par chacuns des arguments
+* at : Planifie un travail à exécuter ultérieurement.
+* atq : liste les travaux planifiés.
+* atrm : supprime des travaux planifiés.
+* crontab : Gérer son fichier cron perso (voir cron)
+* apropos, whatis : Cherche dans le manuel les pages se rapportant à un terme.
