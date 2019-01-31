@@ -1,14 +1,14 @@
-#Notes
+# Notes
 
-##Bash 
+## Bash 
 
-###Usefull trick
+### Usefull trick
 
 $_ or !$ : Repeat last argument of the previous command
 !!:X : Repeat argument number X of the previous command (!!:0 command, !!:1 first arg ...)
 !! : Repeat last command (ex: sudo !!)
 
-###Shortcut
+### Shortcut
 *   ctrl + _ (undo)
 *   ctrl + t (swap two characters)
 *   ALT + t (swap two words)
@@ -27,5 +27,5 @@ $_ or !$ : Repeat last argument of the previous command
 *   ctrl + l (clears screen)s
 
 
-###Commands
+### Commands
 bind -p : List all bash shortcuts
