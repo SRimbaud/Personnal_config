@@ -1,12 +1,25 @@
 # .bashrc
 
+function hg_branch ()
+{
+  #Do the same as hg branch but 5 to 10 times faster.
+  local HG_ROOT=""
+  local DIR=`pwd`
+  while [ $DIR != "/" ]; do
+    if [ -f $DIR'/.hg/branch' ]; then
+      echo "{Hg:`cat $DIR'/.hg/branch'`}"
+      return 0
+    else
+      DIR=`dirname $DIR`
+    fi
+  done
+  return 1
+}
+
 function rev_branch ()
 {
-  hg branch 2> /dev/null |awk '{printf("{Mercurial:%s}-",$1)}'
-  if [ ${PIPESTATUS}[0] == 0 ]; then
-   return 0;
- fi 
-  git branch 2> /dev/null |awk '/^\*/ {printf("{Git:%s}-",$2)}'
+  hg_branch ||\
+  git branch 2> /dev/null |awk '/^\*/ {printf("{Git:%s}",$2)}'
 }
 
 # Source global definitions
