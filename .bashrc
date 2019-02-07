@@ -32,6 +32,7 @@ function _prompt_command
 {
   local EXIT="$?";
   PS1=""
+  PS2=""
 
   ##Colors
   local RESET='\[\e[0m\]'
@@ -48,11 +49,10 @@ function _prompt_command
   fi
   PS1+="${GREEN}[\u@\h]${RESET}`rev_branch`${BLUE}\w${RESET}"
   ## Second line
-  PS1+="\n${ORANGE}[\!]> ${RESET}"
+  PS1+="\n${ORANGE}[\#|\!]> ${RESET}"
+  PS2+="${ORANGE}[\#|\!]> ${RESET}"
 }
-export PATH=$PATH:/home/fsardren/anaconda3/bin
-#PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$ "
-#export PS1
+
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -64,5 +64,5 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=3000
-HISTFILESIZE=10000
+HISTSIZE=700
+HISTFILESIZE=5000
