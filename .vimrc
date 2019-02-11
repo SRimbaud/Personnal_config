@@ -12,7 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 "
 Plugin 'Yggdroot/indentLine'
 Plugin 'junegunn/vim-easy-align'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -70,17 +71,26 @@ set noshowmode
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_enable_signs = 1
+"
+"let g:syntastic_python_checkers = ['pylint', 'flake8', 'pyflakes']
+"let g:syntastic_sh_checkers = ['sh', 'shellcheck']
+"let g:syntastic_cmake_checkers = ['cmakelint']
+"let g:syntastic_cpp_checkers = []
+"let g:syntastic_c_checkers = []
 
-let g:syntastic_python_checkers = ['pylint', 'flake8', 'pyflakes']
-let g:syntastic_sh_checkers = ['sh', 'shellcheck']
-let g:syntastic_cmake_checkers = ['cmakelint']
-let g:syntastic_cpp_checkers = []
-let g:syntastic_c_checkers = []
+"--------- ale ----------
+"Need to install : 
+"* autopep8 (pip install --user autopep8) 
+"* pylint (dnf, apt, pacman ...)
+"* clang
+let g:ale_completion_enable=1
+let b:ale_fixers = { 'python': ['autopep8', 'pylint'],
+      \ 'C': ['clang-format'], 'C++': ['clang-format']}
 
 "----------- NerdTree + Tagbar + MiniBufferExplorer ------
 function OWNStartMBE()
