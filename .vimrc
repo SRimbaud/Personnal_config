@@ -90,7 +90,9 @@ set noshowmode
 "* clang
 let g:ale_completion_enable=1
 let b:ale_fixers = { 'python': ['autopep8', 'pylint'],
-      \ 'C': ['clang-format'], 'C++': ['clang-format']}
+      \ 'C': ['clang-format'], 'C++': ['clang-format'],
+      \ 'awk': ['gawk'], 'sh': ['ShellCheck'],
+      \ 'vim': ['vint'], 'hs': ['hlint']}
 
 "----------- NerdTree + Tagbar + MiniBufferExplorer ------
 function OWNStartMBE()
