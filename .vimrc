@@ -18,7 +18,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/scons.vim'
@@ -26,8 +26,8 @@ Plugin 'fholgado/minibufexpl.vim'
 
 "Colorscheme
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'NLKNguyen/papercolor-theme'
+"Plugin 'morhetz/gruvbox'
+"Plugin 'NLKNguyen/papercolor-theme'
 "...
 
 
