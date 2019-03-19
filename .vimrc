@@ -32,7 +32,7 @@ Plugin 'nanotech/jellybeans.vim'
 
 
 call vundle#end()
-filetype plugin indent on
+"filetype plugin indent on
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 "Let default coloscheme color for indentline (Bad with new railcast)
@@ -194,9 +194,12 @@ set t_Co=256
 colorscheme jellybeans
 highlight ColorColumn ctermbg=DarkRed guibg=DarkRed
 
-set tabstop =2
-set shiftwidth =2
-set softtabstop =2
-set expandtab
+set autoindent
+set noexpandtab
+set tabstop =4
+set shiftwidth =4
+set softtabstop =4
+set listchars=tab:\|\ 
+set list
 
 
